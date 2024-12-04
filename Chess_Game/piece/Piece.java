@@ -1,6 +1,8 @@
 package Chess_Game.piece;
 
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+
 import Chess_Game.main.Board;
 
 /*Super class for all piece behaviors */
@@ -23,6 +25,10 @@ public class Piece {
         preCol = row;
     }
 
+    /*This class generates the images of the chess pieces
+     * It also sets up a getter method to access the images 
+     * in a much easer way.
+     */
     public BufferedImage getImage(String imagePath)
     {
         BufferedImage image = null;
@@ -30,6 +36,13 @@ public class Piece {
         {
             image = ImageIO.read(getClass().getResourceAsStream(imagePath + ".png"));
         }
+        
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        return image;
     }
     
     public int getX(int col)
