@@ -2,6 +2,7 @@ package Chess_Game.piece;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import javax.imageio.*;
 
 import Chess_Game.main.Board;
 

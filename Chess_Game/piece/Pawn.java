@@ -21,6 +21,7 @@ public class Pawn extends Piece{
         {
             image = getImage("piece/pawn1");
         }
+    }
 }
 
 /*Pawn Movements:

@@ -14,7 +14,7 @@ public class Queen extends Piece{
         }
         else
         {
-            image getImage("/piece/queen1");
+            image = getImage("/piece/queen1");
         }
     }
 
