@@ -40,6 +40,7 @@ public class GamePanel extends JPanel implements Runnable{
         setBackground(Color.black);
 
         setPieces();
+        copyPieces(pieces, simPieces);
     }
 
     //Launches game and initializes the Thread method
@@ -90,6 +91,20 @@ public class GamePanel extends JPanel implements Runnable{
 
     }
 
+    /*
+     * Copies pieces over from the pieces array into the simPieces array
+     * Keeps track of piece movements 
+     */
+    
+    private void copyPieces(ArrayList<Piece> source, ArrayList<Piece> target)
+    {
+        target.clear();
+        for(int i = 0; i < source.size(); i++)
+        {
+            target.add(source.get(i));
+        }
+    }
+
     @Override
     //Creates a game loop
     public void run()
@@ -135,8 +150,17 @@ public class GamePanel extends JPanel implements Runnable{
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D)g;
-
+        
+        //BOARD
         board.draw(g2);
+
+        //PIECES
+        for(Piece p : simPieces)
+        {
+            p.draw(g2);
+        }
+
+
     }
 
 
